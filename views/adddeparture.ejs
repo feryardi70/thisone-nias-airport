@@ -1,0 +1,35 @@
+<div class="container py-5">
+  <h2 class="mb-2">Form Add Departure</h2>
+
+  <form method="post" action="/">
+    <div class="mb-3">
+      <label for="airline" class="form-label">Airline</label>
+      <input type="text" maxlength="2" class="form-control" id="airline" name="airline" placeholder="masukkan kode airline" style="text-transform: uppercase" aria-describedby="airline" />
+    </div>
+    <div class="mb-3">
+      <label for="flightnumber" class="form-label">Flight Number</label>
+      <input type="number" class="form-control" id="flightnumber" name="flightnumber" placeholder="1266" aria-describedby="flightnumber" />
+    </div>
+    <div class="mb-3">
+      <label for="destination" class="form-label">Destination</label>
+      <input type="text" class="form-control" id="destination" name="destination" placeholder="nama kota" style="text-transform: uppercase" aria-describedby="destination" />
+    </div>
+    <div class="mb-3">
+      <label for="departdate" class="form-label">Departure Date</label>
+      <input type="date" class="form-control" id="departdate" name="departdate" aria-describedby="departdate" />
+    </div>
+    <div class="mb-3">
+      <label for="departtime" class="form-label">Departure Time</label>
+      <input type="time" class="form-control" id="departtime" name="departtime" aria-describedby="departtime" />
+    </div>
+    <div class="mb-3">
+      <label for="gate" class="form-label">Gate</label>
+      <input type="text" class="form-control" id="gate" name="gate" placeholder="01" aria-describedby="gate" />
+    </div>
+    <div class="mb-3">
+      <label for="remark" class="form-label">Remark</label>
+      <input type="text" class="form-control" id="remark" name="remark" aria-describedby="remark" />
+    </div>
+    <button type="submit" class="btn" style="background-color: rgb(202, 141, 182)">Add</button>
+  </form>
+</div>

@@ -1,0 +1,36 @@
+<div class="container py-5">
+  <h2 class="mb-2">Form Edit Departure</h2>
+
+  <form method="post" action="/?_method=PUT">
+    <input type="hidden" name="_id" value="<%= departure._id %>" />
+    <div class="mb-3">
+      <label for="airline" class="form-label">Airline</label>
+      <input type="text" maxlength="2" class="form-control" id="airline" name="airline" value="<%= departure.airline %>" aria-describedby="airline" />
+    </div>
+    <div class="mb-3">
+      <label for="flightnumber" class="form-label">Flight Number</label>
+      <input type="number" class="form-control" id="flightnumber" name="flightnumber" value="<%= departure.flightnumber %>" aria-describedby="flightnumber" />
+    </div>
+    <div class="mb-3">
+      <label for="destination" class="form-label">Destination</label>
+      <input type="text" class="form-control" id="destination" name="destination" value="<%= departure.destination %>" style="text-transform: uppercase" aria-describedby="destination" />
+    </div>
+    <div class="mb-3">
+      <label for="departdate" class="form-label">Departure Date</label>
+      <input type="date" class="form-control" id="departdate" name="departdate" value="<%= departure.departdate %>" aria-describedby="departdate" />
+    </div>
+    <div class="mb-3">
+      <label for="departtime" class="form-label">Departure Time</label>
+      <input type="time" class="form-control" id="departtime" name="departtime" value="<%= departure.departtime %>" aria-describedby="departtime" />
+    </div>
+    <div class="mb-3">
+      <label for="gate" class="form-label">Gate</label>
+      <input type="text" class="form-control" id="gate" name="gate" value="<%= departure.gate %>" aria-describedby="gate" />
+    </div>
+    <div class="mb-3">
+      <label for="remark" class="form-label">Remark</label>
+      <input type="text" class="form-control" id="remark" name="remark" value="<%= departure.remark %>" aria-describedby="remark" />
+    </div>
+    <button type="submit" class="btn" style="background-color: rgb(202, 141, 182)">Confirm</button>
+  </form>
+</div>

@@ -1,0 +1,50 @@
+<div class="container py-5">
+  <h2>Departure Dashboard</h2>
+  <button class="btn" style="background-color: rgb(120, 224, 134)">
+    <a href="/add">Add Flight Departure</a>
+  </button>
+  <button class="btn" style="background-color: rgb(120, 224, 134)">
+    <a href="/departure" target="_blank">View Departure</a>
+  </button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Airline</th>
+        <th scope="col">Flight Number</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Departure Date</th>
+        <th scope="col">Departure Time</th>
+        <th scope="col">Gate</th>
+        <th scope="col">Remark</th>
+        <th scope="col">Aksi</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <% if (departures.length < 1) { %>
+      <tr>
+        <td colspan="4">
+          <div class="alert alert-secondary fw-bold" role="alert">
+            <div class="mb-0 text-center">Data Kontak Kosong!!!</div>
+          </div>
+        </td>
+      </tr>
+      <% } %> <% departures.forEach((depart, i) => { %>
+      <tr>
+        <th scope="row"><%= ++i %></th>
+        <td><%= depart.airline %></td>
+        <td><%= depart.flightnumber %></td>
+        <td><%= depart.destination %></td>
+        <td><%= depart.departdate %></td>
+        <td><%= depart.departtime %></td>
+        <td><%= depart.gate %></td>
+        <td><%= depart.remark %></td>
+        <td>
+          <a href="/edit/<%= depart.airline %>" class="btn btn-success badge rounded-pill"><i class="bi bi-info-circle"></i> Edit</a>
+          <a href="/delete/<%= depart.airline %>" class="btn btn-secondary badge rounded-pill" onclick="return confirm('apakah yakin akan menghapus ini?')"><i class="bi bi-info-circle"></i> Delete</a>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,37 @@
+<div>
+  <table class="">
+    <thead>
+      <tr>
+        <th scope="">Flight</th>
+        <th scope="">Destination</th>
+        <th scope="">Time</th>
+        <th scope="">Gate</th>
+        <th scope="">Remark</th>
+      </tr>
+    </thead>
+    <tbody class="">
+      <% departures.forEach((depart) => { %>
+      <tr>
+        <td>
+          <div class="tampillogo"></div>
+          <div>
+            <span class="maskapai" style="text-transform: uppercase"><%= depart.airline %></span>
+            <span><%= depart.flightnumber %></span>
+          </div>
+        </td>
+        <td style="text-transform: uppercase"><%= depart.destination %></td>
+        <td><%= depart.departtime %></td>
+        <td><%= depart.gate %></td>
+        <td style="text-transform: uppercase"><%= depart.remark %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <div class="depart">
+    <div class="bottom-center">DEPARTURE</div>
+  </div>
+</div>
+
+<!-- script -->
+<script src="js/loadlogo.js"></script>
