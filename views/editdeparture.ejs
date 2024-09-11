@@ -1,11 +1,11 @@
-<div class="container py-5">
-  <h2 class="mb-2">Form Edit Departure</h2>
+<div class="container">
+  <h2 class="mb-2">Form Edit Flight Departure</h2>
 
   <form method="post" action="/?_method=PUT">
     <input type="hidden" name="_id" value="<%= departure._id %>" />
     <div class="mb-3">
-      <label for="airline" class="form-label">Airline</label>
-      <input type="text" maxlength="2" class="form-control" id="airline" name="airline" value="<%= departure.airline %>" aria-describedby="airline" />
+      <span><label for="airline" class="form-label">Airline</label></span>
+      <span><input type="text" maxlength="2" class="form-control" id="airline" name="airline" value="<%= departure.airline %>" aria-describedby="airline" /></span>
     </div>
     <div class="mb-3">
       <label for="flightnumber" class="form-label">Flight Number</label>

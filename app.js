@@ -51,8 +51,8 @@ app.post("/", (req, res) => {
   res.redirect("/");
 });
 
-app.get("/delete/:airline", async (req, res) => {
-  const departure = await Departure.findOne({ airline: req.params.airline });
+app.get("/delete/:_id", async (req, res) => {
+  const departure = await Departure.findOne({ _id: req.params._id });
   if (!departure) {
     res.status(404);
     res.send("<h1>gagal menghapus jadwal penerbangan</h1>");
@@ -64,9 +64,13 @@ app.get("/delete/:airline", async (req, res) => {
   res.redirect("/");
 });
 
-app.get("/edit/:airline", async (req, res) => {
-  const departure = await Departure.findOne({ airline: req.params.airline });
-  res.render("editdeparture", { layout: "Layouts/none", departure });
+app.get("/add", (req, res) => {
+  res.render("adddeparture", { layout: "Layouts/none2" });
+});
+
+app.get("/edit/:_id", async (req, res) => {
+  const departure = await Departure.findOne({ _id: req.params._id });
+  res.render("editdeparture", { layout: "Layouts/none2", departure });
 });
 
 app.put("/", (req, res) => {
@@ -88,10 +92,6 @@ app.put("/", (req, res) => {
     console.log("berhasil mengubah data");
   });
   res.redirect("/");
-});
-
-app.get("/add", (req, res) => {
-  res.render("adddeparture", { layout: "Layouts/none" });
 });
 
 app.use("/", (req, res) => {

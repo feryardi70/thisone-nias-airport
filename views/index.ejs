@@ -1,15 +1,16 @@
 <div class="container py-5">
   <h2>Departure Dashboard</h2>
-  <button class="btn" style="background-color: rgb(120, 224, 134)">
+  <button class="btn" style="background-color: rgb(53, 59, 59)">
     <a href="/add">Add Flight Departure</a>
   </button>
-  <button class="btn" style="background-color: rgb(120, 224, 134)">
+  <button class="btn" style="background-color: rgb(53, 59, 59)">
     <a href="/departure" target="_blank">View Departure</a>
   </button>
   <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
+        <th scope="col">Unique ID</th>
         <th scope="col">Airline</th>
         <th scope="col">Flight Number</th>
         <th scope="col">Destination</th>
@@ -32,6 +33,7 @@
       <% } %> <% departures.forEach((depart, i) => { %>
       <tr>
         <th scope="row"><%= ++i %></th>
+        <td><%= depart._id %></td>
         <td><%= depart.airline %></td>
         <td><%= depart.flightnumber %></td>
         <td><%= depart.destination %></td>
@@ -40,8 +42,8 @@
         <td><%= depart.gate %></td>
         <td><%= depart.remark %></td>
         <td>
-          <a href="/edit/<%= depart.airline %>" class="btn btn-success badge rounded-pill"><i class="bi bi-info-circle"></i> Edit</a>
-          <a href="/delete/<%= depart.airline %>" class="btn btn-secondary badge rounded-pill" onclick="return confirm('apakah yakin akan menghapus ini?')"><i class="bi bi-info-circle"></i> Delete</a>
+          <a href="/edit/<%= depart._id %>" class="btn btn-success badge rounded-pill"><i class="bi bi-info-circle"></i> Edit</a>
+          <a href="/delete/<%= depart._id %>" class="btn btn-secondary badge rounded-pill" onclick="return confirm('apakah yakin akan menghapus ini?')"><i class="bi bi-info-circle"></i> Delete</a>
         </td>
       </tr>
       <% }) %>
