@@ -30,7 +30,10 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/departure", async (req, res) => {
-  const departures = await Departure.find().sort({ departtime: 1 });
+  const datetime = new Date();
+  const formattedDate = datetime.toISOString().substring(0, 10);
+  //console.log(formattedDate);
+  const departures = await Departure.find({ departdate: formattedDate }).sort({ departtime: 1 });
   res.render("departure", { layout: "Layouts/departure-layout", departures });
 });
 
