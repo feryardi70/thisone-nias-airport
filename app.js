@@ -34,7 +34,7 @@ app.get("/departure", async (req, res) => {
   const yyyy = datetime.getFullYear();
   let mm = datetime.getMonth();
   mm++
-  let dd = datetime.Date();
+  let dd = datetime.getDate();
 
   if (dd<10) dd = "0" + dd;
   if (dd<10) mm = "0" + mm;
