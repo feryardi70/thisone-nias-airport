@@ -31,14 +31,14 @@ app.get("/", async (req, res) => {
 
 app.get("/departure", async (req, res) => {
   const datetime = new Date();
-  const yyyy = datetime.getFullYear();
+  const yyyy = datetime.getFullYear().toString();
   let mm = datetime.getMonth() + 1;
   let dd = datetime.getDate();
 
-  dd < 10 ? "0" + dd : String(dd); 
-  mm < 10 ? "0" + mm : String(mm);
+  dd < 10 ? "0" + dd : dd; 
+  mm < 10 ? "0" + mm : mm;
 
-  const formattedToday = String(yyyy) + "-" + mm + "-" + dd;
+  const formattedToday = yyyy + "-" + mm + "-" + dd;
   const formattedDate = datetime.toISOString().substring(0, 10);
   //console.log(formattedDate);
   const departures = await Departure.find({ departdate: formattedToday }).sort({ departtime: 1 });
