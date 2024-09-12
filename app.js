@@ -35,8 +35,8 @@ app.get("/departure", async (req, res) => {
   let mm = datetime.getMonth() + 1;
   let dd = datetime.getDate();
 
-  let dd < 10 ? "0" + dd : dd; 
-  let mm < 10 ? "0" + mm : mm;
+  dd < 10 ? "0" + dd : String(dd); 
+  mm < 10 ? "0" + mm : String(mm);
 
   const formattedToday = String(yyyy) + "-" + mm + "-" + dd;
   const formattedDate = datetime.toISOString().substring(0, 10);
