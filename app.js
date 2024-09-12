@@ -31,9 +31,18 @@ app.get("/", async (req, res) => {
 
 app.get("/departure", async (req, res) => {
   const datetime = new Date();
+  const yyyy = datetime.getFullYear();
+  let mm = datetime.getMonth();
+  mm++
+  let dd = datetime.Date();
+
+  if (dd<10) dd = "0" + dd;
+  if (dd<10) mm = "0" + mm;
+
+  const formattedToday = yyyy + "-" + mm + "-" + dd;
   const formattedDate = datetime.toISOString().substring(0, 10);
   //console.log(formattedDate);
-  const departures = await Departure.find({ departdate: formattedDate }).sort({ departtime: 1 });
+  const departures = await Departure.find({ departdate: formattedToday }).sort({ departtime: 1 });
   res.render("departure", { layout: "Layouts/departure-layout", departures });
 });
 
