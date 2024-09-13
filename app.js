@@ -36,9 +36,9 @@ app.get("/departure", async (req, res) => {
   let mm = datetime.getMonth() + 1;
 
   if (h < 7 || h == 7){
-    return dd = datetime.getDate() + 1;
+    let dd = datetime.getDate() + 1;
   } else {
-    return dd = datetime.getDate();
+    let dd = datetime.getDate();
   }
 
   const hari = dd < 10 ? "0" + dd : dd; 
