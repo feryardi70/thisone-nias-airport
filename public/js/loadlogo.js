@@ -26,7 +26,7 @@ for (let i = 0; i < maskapai.length; i++) {
 
     const logoContainer = document.querySelectorAll(".tampillogo");
     logoContainer[i].innerHTML = divTampilLogo;
-  } else if (maskapai[i].innerHTML == "IW") {
+  } else if (maskapai[i].innerHTML == "IW" || "iw" || "Iw" || "iW" ) {
     const divTampilLogo = '<img class="" src="img/wingairupdate.png" alt="" />';
 
     const logoContainer = document.querySelectorAll(".tampillogo");
