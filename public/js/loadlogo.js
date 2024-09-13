@@ -1,7 +1,7 @@
 const maskapai = document.querySelectorAll(".maskapai");
 //console.log(maskapai.length);
 for (let i = 0; i < maskapai.length; i++) {
-  if (maskapai[i].innerHTML == "QG" || "qg" || Qg || qG) {
+  if (maskapai[i].innerHTML == "QG" || "qg" || "Qg" || "qG") {
     const divTampilLogo = '<img src="img/citilinkupdate.png" alt="" />';
 
     const logoContainer = document.querySelectorAll(".tampillogo");
