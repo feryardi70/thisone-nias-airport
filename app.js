@@ -35,13 +35,13 @@ app.get("/departure", async (req, res) => {
   let mm = datetime.getMonth() + 1;
   let dd = datetime.getDate();
 
-  dd < 10 ? "0" + dd.toString() : dd.toString(); 
-  mm < 10 ? "0" + mm.toString() : mm.toString();
+  const hari = dd < 10 ? "0" + dd : dd; 
+  const bulan = mm < 10 ? "0" + mm : mm;
 
-  const formattedToday = yyyy + "-" + mm + "-" + dd;
+  const formattedToday = yyyy + "-" + bulan + "-" + hari;
   const formattedDate = datetime.toISOString().substring(0, 10);
   //console.log(formattedDate);
-  const departures = await Departure.find({ departdate: formattedDate }).sort({ departtime: 1 });
+  const departures = await Departure.find({ departdate: formattedToday }).sort({ departtime: 1 });
   res.render("departure", { layout: "Layouts/departure-layout", departures });
 });
 
