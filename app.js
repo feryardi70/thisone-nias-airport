@@ -39,8 +39,8 @@ app.get("/departure", async (req, res) => {
   const bulan = mm < 10 ? "0" + mm : mm;
 
   const formattedToday = yyyy + "-" + bulan + "-" + hari;
-  const formattedDate = datetime.toISOString().substring(0, 10);
-  //console.log(formattedDate);
+  //const formattedDate = datetime.toISOString().substring(0, 10);
+  console.log(formattedToday);
   const departures = await Departure.find({ departdate: formattedToday }).sort({ departtime: 1 });
   res.render("departure", { layout: "Layouts/departure-layout", departures });
 });
