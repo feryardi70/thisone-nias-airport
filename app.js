@@ -36,9 +36,9 @@ app.get("/departure", async (req, res) => {
   let mm = datetime.getMonth() + 1;
   let dd = datetime.getDate();
 
-  const hh = h > 17 ? dd++ : dd;
+  let hh = h > 17 ? dd++ : dd;
 
-  const hari = hh < 10 ? "0" + hh : hh; 
+  let hari = hh < 10 ? "0" + hh : hh; 
   const bulan = mm < 10 ? "0" + mm : mm;
 
   const formattedToday = yyyy + "-" + bulan + "-" + hari;
