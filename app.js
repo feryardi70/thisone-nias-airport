@@ -34,12 +34,9 @@ app.get("/departure", async (req, res) => {
   const h = datetime.getHours();
   const yyyy = datetime.getFullYear().toString();
   let mm = datetime.getMonth() + 1;
+  let dd = datetime.getDate();
 
-  if (h < 7 || h == 7){
-    let dd = datetime.getDate() + 1;
-  } else {
-    let dd = datetime.getDate();
-  }
+  dd++ if h <= 7 || h == 7;
 
   const hari = dd < 10 ? "0" + dd : dd; 
   const bulan = mm < 10 ? "0" + mm : mm;
