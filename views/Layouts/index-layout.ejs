@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Dashboard</title>
+    <!-- <link rel="stylesheet" href="./output.css" /> -->
+
+    <style>
+      /* Reset some default styles */
+      body,
+      h1,
+      h2,
+      h3,
+      p,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #22a5a5;
+        color: #333;
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .sidebar {
+        width: 250px;
+        background-color: #3880c7;
+        color: #ffffff;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        transition: width 0.3s;
+      }
+
+      .sidebar h2 {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: 24px;
+        background: linear-gradient(to right, #580563, #220129);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .sidebar ul {
+        list-style: none;
+      }
+
+      .sidebar ul li {
+        margin: 0px 0;
+      }
+
+      .sidebar ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+      }
+
+      .sidebar ul li a:hover {
+        background-color: #ab31b6;
+      }
+
+      .main-content {
+        flex: 1;
+        color: #f4f9fa;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        background-image: url("img/nias2.jpeg"); /* Ganti dengan path gambar Anda */
+        background-size: cover; /* Atur gambar agar menutupi seluruh elemen */
+        background-position: center; /* Pusatkan gambar di elemen */
+        background-repeat: no-repeat; /* Jangan ulang gambar */
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      .header h1 {
+        font-size: 24px;
+      }
+
+      .header-actions button {
+        background-color: #b027c2;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-left: 10px;
+        transition: background-color 0.3s;
+      }
+
+      .header-actions button:hover {
+        background-color: #0056b3;
+      }
+
+      .content {
+        flex: 1;
+      }
+
+      .flight-overview {
+        padding: 0px; /* Menambahkan sedikit ruang di dalam div */
+        margin-bottom: 0px;
+      }
+
+      .cards {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        margin-top: 10px;
+        background-color: #9cc5ee;
+        color: #131111;
+        border-radius: 8px;
+        padding: 20px;
+        width: 100%;
+        max-width: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .card h3 {
+        margin-top: 10px;
+        margin-bottom: 0px;
+        font-size: 24px;
+      }
+
+      .card p {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .rounded-lg {
+        border-radius: 8px;
+      }
+      .text-color2 {
+        color: rgb(250, 250, 250) /* #000000 */;
+      }
+      .gradient-text {
+        font-weight: bold;
+        background: linear-gradient(to right, #580563, #220129);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .bg-overview {
+        display: inline-block; /* Mengatur div agar selebar kontennya */
+        padding-left: 1px; /* Menambahkan sedikit ruang di dalam div */
+        padding-right: 5px; /* Menambahkan sedikit ruang di dalam div */
+        background-color: #b027c2;
+      }
+
+      /* Media Queries */
+      @media (max-width: 913px) {
+        .sidebar {
+          width: 200px;
+        }
+        .img-depart {
+          width: 300px;
+          height: 300px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .sidebar {
+          width: 75%;
+          position: fixed;
+          height: 100%;
+          z-index: 1000;
+          transition: transform 0.3s;
+          transform: translateX(-100%);
+        }
+
+        .sidebar.show {
+          transform: translateX(0);
+        }
+
+        .main-content {
+          margin-left: 0;
+          padding: 10px;
+        }
+
+        .header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .header-actions {
+          margin-top: 10px;
+        }
+
+        .cards {
+          flex-direction: column;
+          align-items: center;
+        }
+        .img-depart {
+          width: 250px;
+          height: 250px;
+        }
+      }
+
+      /* For large devices, increase card size */
+      @media (min-width: 960px) {
+        .card {
+          max-width: 470px; /* Increase max-width for larger screens */
+        }
+        .sidebar {
+          width: 150px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <%- body %>
+  </body>
+</html>

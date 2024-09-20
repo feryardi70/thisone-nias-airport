@@ -1,0 +1,59 @@
+<div class="container py-5">
+  <h2>Arrival Dashboard</h2>
+  <% if (msg.length !== 0) { %>
+  <div class="alert alert-success fw-bold"><%= msg %></div>
+  <% } %> <% if (msgDelete.length !== 0) { %>
+  <div class="alert alert-success fw-bold"><%= msgDelete %></div>
+  <% } %> <% if (msgUbah.length !== 0) { %>
+  <div class="alert alert-success fw-bold"><%= msgUbah %></div>
+  <% } %>
+  <button class="btn" style="background-color: rgb(53, 59, 59)">
+    <a href="/arrival/add">Add Flight Arrival</a>
+  </button>
+  <button class="btn" style="background-color: rgb(53, 59, 59)">
+    <a href="/viewarrival" target="_blank">View Arrival</a>
+  </button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Unique ID</th>
+        <th scope="col">Airline</th>
+        <th scope="col">Flight Number</th>
+        <th scope="col">Origin</th>
+        <th scope="col">Arrival Date</th>
+        <th scope="col">Arrival Time</th>
+        <th scope="col">Baggage Claim</th>
+        <th scope="col">Remark</th>
+        <th scope="col">Aksi</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <% if (arrivals.length < 1) { %>
+      <tr>
+        <td colspan="4">
+          <div class="alert alert-secondary fw-bold" role="alert">
+            <div class="mb-0 text-center">Data Kosong!!!</div>
+          </div>
+        </td>
+      </tr>
+      <% } %> <% arrivals.forEach((arrive, i) => { %>
+      <tr>
+        <th scope="row"><%= ++i %></th>
+        <td><%= arrive._id %></td>
+        <td><%= arrive.airline %></td>
+        <td><%= arrive.flightnumber %></td>
+        <td><%= arrive.origin %></td>
+        <td><%= arrive.arrivedate %></td>
+        <td><%= arrive.arrivetime %></td>
+        <td><%= arrive.baggage %></td>
+        <td><%= arrive.remark %></td>
+        <td>
+          <a href="/arrival/edit/<%= arrive._id %>" class="btn btn-success badge rounded-pill"><i class="bi bi-info-circle"></i> Edit</a>
+          <a href="/arrival/delete/<%= arrive._id %>" class="btn btn-secondary badge rounded-pill" onclick="return confirm('apakah yakin akan menghapus ini?')"><i class="bi bi-info-circle"></i> Delete</a>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>

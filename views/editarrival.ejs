@@ -1,0 +1,35 @@
+<div class="form-container">
+  <h2 class="mb-2">Form Edit Flight Arrival</h2>
+
+  <form method="post" action="/arrival?_method=PUT">
+    <div class="form-row">
+      <div class="column">
+        <label for="airline" class="form-label">Airline</label>
+        <input type="text" maxlength="2" class="form-control" id="airline" name="airline" value="<%= arrival.airline %>" placeholder="masukkan kode airline" style="text-transform: uppercase" aria-describedby="airline" />
+
+        <label for="flightnumber" class="form-label">Flight Number</label>
+        <input type="number" class="form-control" id="flightnumber" name="flightnumber" value="<%= arrival.flightnumber %>" placeholder="1266" aria-describedby="flightnumber" />
+
+        <label for="origin" class="form-label">Origin</label>
+        <input type="text" class="form-control" id="origin" name="origin" value="<%= arrival.origin %>" placeholder="nama kota" style="text-transform: uppercase" aria-describedby="origin" />
+
+        <label for="arrivedate" class="form-label">Arrival Date</label>
+        <input type="date" class="form-control" id="arrivedate" name="arrivedate" value="<%= arrival.arrivedate %>" aria-describedby="arrivedate" />
+      </div>
+
+      <div class="column">
+        <label for="arrivetime" class="form-label">Arrival Time</label>
+        <input type="time" class="form-control" id="arrivetime" name="arrivetime" value="<%= arrival.arrivetime %>" aria-describedby="arrivetime" />
+
+        <label for="baggage" class="form-label">Baggage Claim</label>
+        <input type="text" class="form-control" id="baggage" name="baggage" value="<%= arrival.baggage %>" placeholder="01" aria-describedby="baggage" />
+
+        <label for="remark" class="form-label">Remark</label>
+        <input type="text" class="form-control" id="remark" name="remark" value="<%= arrival.remark %>" aria-describedby="remark" />
+
+        <input type="hidden" name="_id" value="<%= arrival._id %>" />
+      </div>
+    </div>
+    <button type="submit" class="btn" style="background-color: rgb(202, 141, 182)">Edit</button>
+  </form>
+</div>

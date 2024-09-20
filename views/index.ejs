@@ -1,52 +1,37 @@
-<div class="container py-5">
-  <h2>Departure Dashboard</h2>
-  <button class="btn" style="background-color: rgb(53, 59, 59)">
-    <a href="/add">Add Flight Departure</a>
-  </button>
-  <button class="btn" style="background-color: rgb(53, 59, 59)">
-    <a href="/departure" target="_blank">View Departure</a>
-  </button>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Unique ID</th>
-        <th scope="col">Airline</th>
-        <th scope="col">Flight Number</th>
-        <th scope="col">Destination</th>
-        <th scope="col">Departure Date</th>
-        <th scope="col">Departure Time</th>
-        <th scope="col">Gate</th>
-        <th scope="col">Remark</th>
-        <th scope="col">Aksi</th>
-      </tr>
-    </thead>
-    <tbody class="table-group-divider">
-      <% if (departures.length < 1) { %>
-      <tr>
-        <td colspan="4">
-          <div class="alert alert-secondary fw-bold" role="alert">
-            <div class="mb-0 text-center">Data Kontak Kosong!!!</div>
-          </div>
-        </td>
-      </tr>
-      <% } %> <% departures.forEach((depart, i) => { %>
-      <tr>
-        <th scope="row"><%= ++i %></th>
-        <td><%= depart._id %></td>
-        <td><%= depart.airline %></td>
-        <td><%= depart.flightnumber %></td>
-        <td><%= depart.destination %></td>
-        <td><%= depart.departdate %></td>
-        <td><%= depart.departtime %></td>
-        <td><%= depart.gate %></td>
-        <td><%= depart.remark %></td>
-        <td>
-          <a href="/edit/<%= depart._id %>" class="btn btn-success badge rounded-pill"><i class="bi bi-info-circle"></i> Edit</a>
-          <a href="/delete/<%= depart._id %>" class="btn btn-secondary badge rounded-pill" onclick="return confirm('apakah yakin akan menghapus ini?')"><i class="bi bi-info-circle"></i> Delete</a>
-        </td>
-      </tr>
-      <% }) %>
-    </tbody>
-  </table>
+<div class="container">
+  <aside class="sidebar">
+    <h2>Side Bar</h2>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="/departure">Departure Dashboard</a></li>
+      <li><a href="/arrival">Arrival Dashboard</a></li>
+    </ul>
+  </aside>
+  <main class="main-content">
+    <header class="header">
+      <h1 class="gradient-text">FLIGHT DASHBOARD</h1>
+      <div class="header-actions">
+        <form method="post" action="/logout">
+          <div id="hidden-input"></div>
+          <button>Logout</button>
+        </form>
+      </div>
+    </header>
+    <section class="content">
+      <div class="bg-overview"><h2 class="flight-overview text-color2">OVERVIEW</h2></div>
+
+      <div class="cards">
+        <div class="card flight-status">
+          <a href="/departure" target="_blank" rel="noopener noreferrer"><img class="rounded-lg img-depart" src="img/departure2.jpg" alt="" /></a>
+          <h3>42 Active Flights</h3>
+        </div>
+        <div class="card weather">
+          <a href="/arrival" target="_blank" rel="noopener noreferrer"><img class="rounded-lg img-depart" src="img/arrival2.jpg" alt="" /></a>
+          <h3>42 Active Flights</h3>
+        </div>
+      </div>
+    </section>
+  </main>
 </div>
+
+<script src="js/credential.js"></script>

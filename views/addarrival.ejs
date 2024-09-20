@@ -1,7 +1,7 @@
 <div class="form-container">
-  <h2 class="mb-2">Form Add Flight Departure</h2>
+  <h2 class="mb-2">Form Add Flight Arrival</h2>
 
-  <form method="post" action="/departure">
+  <form method="post" action="/arrival">
     <div class="form-row">
       <div class="column">
         <label for="airline" class="form-label">Airline</label>
@@ -10,19 +10,19 @@
         <label for="flightnumber" class="form-label">Flight Number</label>
         <input type="number" class="form-control" id="flightnumber" name="flightnumber" placeholder="1266" aria-describedby="flightnumber" />
 
-        <label for="destination" class="form-label">Destination</label>
-        <input type="text" class="form-control" id="destination" name="destination" placeholder="nama kota" style="text-transform: uppercase" aria-describedby="destination" />
+        <label for="origin" class="form-label">Origin</label>
+        <input type="text" class="form-control" id="origin" name="origin" placeholder="nama kota" style="text-transform: uppercase" aria-describedby="origin" />
 
-        <label for="departdate" class="form-label">Departure Date</label>
-        <input type="date" class="form-control" id="departdate" name="departdate" aria-describedby="departdate" />
+        <label for="arrivedate" class="form-label">Arrival Date</label>
+        <input type="date" class="form-control" id="arrivedate" name="arrivedate" aria-describedby="arrivedate" />
       </div>
 
       <div class="column">
-        <label for="departtime" class="form-label">Departure Time</label>
-        <input type="time" class="form-control" id="departtime" name="departtime" aria-describedby="departtime" />
+        <label for="arrivetime" class="form-label">Arrival Time</label>
+        <input type="time" class="form-control" id="arrivetime" name="arrivetime" aria-describedby="arrivetime" />
 
-        <label for="gate" class="form-label">Gate</label>
-        <input type="text" class="form-control" id="gate" name="gate" placeholder="01" aria-describedby="gate" />
+        <label for="baggage" class="form-label">Baggage Claim</label>
+        <input type="text" class="form-control" id="baggage" name="baggage" placeholder="01" aria-describedby="baggage" />
 
         <label for="remark" class="form-label">Remark</label>
         <input type="text" class="form-control" id="remark" name="remark" aria-describedby="remark" />

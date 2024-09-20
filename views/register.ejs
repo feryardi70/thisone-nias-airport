@@ -1,0 +1,17 @@
+<body>
+  <div class="container">
+    <div class="form-container register-container">
+      <% if (msgPass.length !== 0) { %>
+      <div class="alert alert-success fw-bold" style="background-color: rgb(184, 245, 156)"><%= msgPass %></div>
+      <% } %>
+      <form method="post" action="/register">
+        <h1>Register</h1>
+        <input type="text" placeholder="Username" name="username" required />
+        <input type="password" placeholder="Password" name="password" required />
+        <input type="password" placeholder="Confirm Password" name="confirmPassword" required />
+        <button type="submit">Register</button>
+        <p className="bg-teal-700">Sudah punya akun? <a href="/login" id="login-link">Login di sini</a></p>
+      </form>
+    </div>
+  </div>
+</body>
