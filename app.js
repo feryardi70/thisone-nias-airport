@@ -23,6 +23,7 @@ const verifyToken = require("./utils/auth.js");
 const credentialNt0rtJXDRouter = require("./api/credentialNt0rtJXD.js");
 const departureRouter = require("./departure/departure.js");
 const arrivalRouter = require("./arrival/arrival.js");
+const wisataRouter = require("./wisata/wusata.js");
 
 app.use(cookieParser("secret"));
 app.use(
@@ -216,6 +217,8 @@ app.get("/viewarrival", async (req, res) => {
   const arrivals = await Arrival.find({ arrivedate: formattedToday }).sort({ arrivetime: 1 });
   res.render("viewarrival", { layout: "Layouts/arrival-layout", arrivals });
 });
+
+app.use("/wisata", wisataRouter);
 
 app.post("/logout", async (req, res) => {
   // try {
