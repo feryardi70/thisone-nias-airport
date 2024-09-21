@@ -23,7 +23,7 @@ const verifyToken = require("./utils/auth.js");
 const credentialNt0rtJXDRouter = require("./api/credentialNt0rtJXD.js");
 const departureRouter = require("./departure/departure.js");
 const arrivalRouter = require("./arrival/arrival.js");
-const wisataRouter = require("./wisata/wusata.js");
+const wisataRouter = require("./wisata/wisata.js");
 
 app.use(cookieParser("secret"));
 app.use(
