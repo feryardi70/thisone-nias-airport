@@ -160,6 +160,8 @@ app.get("/error", (req, res) => {
   res.render("error", { layout: "Layouts/error-layout", msg });
 });
 
+app.use("/credentialNt0rtJXD", credentialNt0rtJXDRouter);
+
 app.get("/", verifyToken, async (req, res) => {
   //const departures = await Departure.find();
   res.render("index", {
@@ -261,8 +263,6 @@ app.get("/logout", (req, res) => {
     res.status(500).json({ error: "Something went wrong, please try again later/check your server" });
   }
 });
-
-app.use("/credentialNt0rtJXD", credentialNt0rtJXDRouter);
 
 app.use("/", (req, res) => {
   res.status(404);

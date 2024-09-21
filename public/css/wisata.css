@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.slider {
+  position: relative;
+  height: 100vh; /* Full screen height */
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  /* transition: transform 0.5s ease; */
+  width: 800%; /* 8 slides */
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: auto;
+  height: auto;
+  object-fit: cover; /* Ensure image covers the container */
+}
+/* Buttons (hidden by default) */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  opacity: 0; /* Hidden by default */
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Show buttons when slider is hovered */
+.slider:hover .prev,
+.slider:hover .next {
+  opacity: 1; /* Show buttons */
+  visibility: visible;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Overlay text at the bottom */
+.overlay-text1 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 11%;
+  background: rgba(155, 91, 91, 0); /* Semi-transparent background */
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+.Fari {
+  font-size: 24px;
+}
+.overlay-text2 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 9%;
+  background: rgba(155, 91, 91, 0); /* Semi-transparent background */
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+.Tureloto {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+.overlay-text3 {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  width: 8%;
+  background: rgba(155, 91, 91, 0.4); /* Semi-transparent background */
+  color: rgb(248, 247, 250);
+  text-align: left;
+  font-weight: bold;
+}
+.overlay-text4 {
+  position: absolute;
+  top: 7px;
+  left: 0px;
+  width: 5%;
+  background: rgba(155, 91, 91, 0); /* Semi-transparent background */
+  color: rgb(30, 3, 85);
+  text-align: left;
+  font-weight: bold;
+  transform: translateX(150%);
+}
+.Bawomataluo {
+  font-size: 23px;
+}
+.paragraf1 {
+  font-size: 14px;
+}
+.overlay-text5 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 11%;
+  background: rgba(155, 91, 91, 0.8); /* Semi-transparent background */
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+.overlay-text6 {
+  position: absolute;
+  bottom: 4px;
+  left: 10px;
+  width: 11%;
+  background: rgba(155, 91, 91, 0.6); /* Semi-transparent background */
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+.overlay-text7 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 9%;
+  background: rgba(146, 152, 236, 0.2); /* Semi-transparent background */
+  color: rgb(36, 17, 17);
+  text-align: left;
+  font-weight: bold;
+}
+.overlay-text8 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 9%;
+  background: rgba(146, 152, 236, 0); /* Semi-transparent background */
+  color: rgb(36, 17, 17);
+  text-align: left;
+  font-weight: bold;
+}
