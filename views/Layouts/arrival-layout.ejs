@@ -42,18 +42,22 @@
         display: inline;
       }
       .depart {
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
+        position: fixed;
+        bottom: 0;
         margin-top: 60px;
+        width: 75%;
+        margin-left: 12%;
         /* height: 100vh; Adjust height as needed */
       }
       .bottom-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         background-color: #130704;
-        width: 75%;
         text-align: center;
         padding: 10px;
-        border-radius: 5px;
+        box-sizing: border-box;
       }
       /* th {
         background-color: #0000cd;

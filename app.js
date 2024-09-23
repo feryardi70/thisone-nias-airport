@@ -24,6 +24,7 @@ const credentialNt0rtJXDRouter = require("./api/credentialNt0rtJXD.js");
 const departureRouter = require("./departure/departure.js");
 const arrivalRouter = require("./arrival/arrival.js");
 const wisataRouter = require("./wisata/wisata.js");
+const departureO4yc7xKZRouter = require("./api/departureO4yc7xKZ/departureO4yc7xKZ.js");
 
 app.use(cookieParser("secret"));
 app.use(
@@ -205,9 +206,9 @@ app.get("/viewarrival", async (req, res) => {
   let mm = datetime.getMonth() + 1;
   let dd = datetime.getDate();
 
-  let hh = h >= 17 ? dd + 1 : dd;
+  let hour = h >= 17 ? dd + 1 : dd;
 
-  let hari = hh < 10 ? "0" + hh : hh;
+  let hari = hour < 10 ? "0" + hour : hour;
   const bulan = mm < 10 ? "0" + mm : mm;
 
   const formattedToday = yyyy + "-" + bulan + "-" + hari;
@@ -218,6 +219,7 @@ app.get("/viewarrival", async (req, res) => {
   res.render("viewarrival", { layout: "Layouts/arrival-layout", arrivals });
 });
 
+app.use("/apideparture", departureO4yc7xKZRouter);
 app.use("/wisata", wisataRouter);
 
 app.post("/logout", async (req, res) => {
