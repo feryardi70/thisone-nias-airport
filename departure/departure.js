@@ -42,7 +42,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.get("/delete/:_id", async (req, res) => {
+router.get("/delete/:_id", verifyToken, async (req, res) => {
   const id = req.params._id;
   const departure = await findDepartureById(id);
   if (!departure) {
@@ -78,7 +78,7 @@ router.put("/", async (req, res) => {
   }
 });
 
-router.get("/add", (req, res) => {
+router.get("/add", verifyToken, (req, res) => {
   res.render("adddeparture", { layout: "Layouts/add-edit" });
 });
 
