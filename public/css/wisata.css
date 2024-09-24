@@ -29,8 +29,8 @@ html {
 }
 
 .slide img {
-  width: auto;
-  height: auto;
+  width: 13%;
+  height: 100vh;
   object-fit: cover; /* Ensure image covers the container */
 }
 /* Buttons (hidden by default) */
@@ -94,7 +94,7 @@ html {
   top: 10px;
   left: 10px;
   width: 9%;
-  background: rgba(155, 91, 91, 0); /* Semi-transparent background */
+  background: rgba(155, 91, 91, 0.6); /* Semi-transparent background */
   color: white;
   text-align: left;
   font-weight: bold;
@@ -105,11 +105,11 @@ html {
 }
 .overlay-text3 {
   position: absolute;
-  bottom: 15px;
+  top: 15px;
   left: 10px;
   width: 8%;
   background: rgba(155, 91, 91, 0.4); /* Semi-transparent background */
-  color: rgb(248, 247, 250);
+  color: white;
   text-align: left;
   font-weight: bold;
 }
@@ -132,7 +132,7 @@ html {
 }
 .overlay-text5 {
   position: absolute;
-  bottom: 10px;
+  top: 10px;
   left: 10px;
   width: 11%;
   background: rgba(155, 91, 91, 0.8); /* Semi-transparent background */
@@ -142,7 +142,7 @@ html {
 }
 .overlay-text6 {
   position: absolute;
-  bottom: 4px;
+  top: 4px;
   left: 10px;
   width: 11%;
   background: rgba(155, 91, 91, 0.6); /* Semi-transparent background */
@@ -152,11 +152,11 @@ html {
 }
 .overlay-text7 {
   position: absolute;
-  top: 10px;
+  bottom: 10px;
   left: 10px;
   width: 9%;
   background: rgba(146, 152, 236, 0.2); /* Semi-transparent background */
-  color: rgb(36, 17, 17);
+  color: white;
   text-align: left;
   font-weight: bold;
 }
@@ -165,8 +165,8 @@ html {
   top: 10px;
   left: 10px;
   width: 9%;
-  background: rgba(146, 152, 236, 0); /* Semi-transparent background */
-  color: rgb(36, 17, 17);
+  background: rgba(155, 91, 91, 0.6); /* Semi-transparent background */
+  color: white;
   text-align: left;
   font-weight: bold;
 }
