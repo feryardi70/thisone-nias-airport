@@ -154,7 +154,7 @@ app.post("/login", async (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-  res.render("login", { layout: "Layouts/none2", successMsg: req.flash("successMsg"), msglogin: req.flash("msglogin") });
+  res.render("login", { layout: "Layouts/login", successMsg: req.flash("successMsg"), msglogin: req.flash("msglogin") });
 });
 
 app.get("/error", (req, res) => {

@@ -1,6 +1,5 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,11 +11,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 50%;
 }
 
 .form-container {
   background: #fff;
-  padding: 2em;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  padding-left: 2em;
+  padding-right: 2em;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 300px;
@@ -25,11 +28,12 @@ body {
 
 h1 {
   margin-bottom: 1em;
-  font-size: 24px;
+  font-size: 34px;
   color: #333;
 }
 
 input {
+  font-size: 18px;
   width: calc(100% - 20px);
   padding: 10px;
   margin: 10px 0;
