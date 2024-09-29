@@ -261,8 +261,9 @@ app.post("/logout", async (req, res) => {
   }
 });
 
-app.get("/logout", (req, res) => {
+app.get("/logout", async (req, res) => {
   try {
+    const user = await User.findOne({ username: "superadmin1" });
     const token = jwt.sign({ userId: user._id }, T5BmpO66, {
       expiresIn: "500",
     });
@@ -270,6 +271,7 @@ app.get("/logout", (req, res) => {
     //req.flash("msgOut", "....");
     res.redirect("/login");
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: "Something went wrong, please try again later/check your server" });
   }
 });
