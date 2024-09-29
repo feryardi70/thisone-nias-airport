@@ -185,14 +185,19 @@ app.get("/viewdeparture", async (req, res) => {
   let dd = datetime.getDate();
 
   let hh = h >= 17 ? dd + 1 : dd;
+  let prevhh = hh - 1;
+  let nexthh = hh + 1;
 
   let hari = hh < 10 ? "0" + hh : hh;
   const bulan = mm < 10 ? "0" + mm : mm;
 
   const formattedToday = yyyy + "-" + bulan + "-" + hari;
-  //const formattedDate = datetime.toISOString().substring(0, 10);
-  console.log(formattedToday);
-  console.log(h);
+  const yesteday = formattedToday.substring(0, 8) + prevhh;
+  const tomorrow = formattedToday.substring(0, 8) + nexthh;
+  //const formattedDate = datetime.toISOString().substring(0, 10); 2024-09-26
+  console.log(typeof yesteday);
+  console.log(yesteday);
+  console.log(tomorrow);
   const departures = await Departure.find({ departdate: formattedToday }).sort({ departtime: 1 });
   res.render("viewdeparture", { layout: "Layouts/departure-layout", departures });
 });
