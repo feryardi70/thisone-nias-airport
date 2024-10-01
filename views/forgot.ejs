@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="form-container register-container">
+    <% if (msgForgot.length !== 0) { %>
+    <div class="alert alert-success fw-bold" style="background-color: rgb(236, 34, 34)"><%= msgForgot %></div>
+    <% } %> <% if (msgNewPass.length !== 0) { %>
+    <div class="alertPass alert-success fw-bold" style="background-color: rgb(62, 206, 69)"><%= msgNewPass %></div>
+    <% } %> <% if (username.length !== 0) { %>
+    <div class="alert alert-success fw-bold" style="background-color: rgb(62, 206, 69)"></div>
+    <% } %>
+    <form method="post" action="/forgot">
+      <h1>You are resetting your password</h1>
+      <input type="text" placeholder="Please input your username" name="username" value="<%= username %>" required />
+      <input class="d-none" type="password" placeholder="Password" name="password" />
+      <input class="d-none" type="password" placeholder="Confirm Password" name="confirmPassword" />
+      <button type="submit">Confirm</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const alert = document.querySelector(".alertPass").innerHTML;
+  //console.log(alert);
+  if (typeof alert == "string") {
+    const password = document.querySelectorAll(".d-none");
+    password.forEach((el) => el.classList.remove("d-none"));
+  }
+</script>

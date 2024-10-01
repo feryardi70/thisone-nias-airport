@@ -4,12 +4,15 @@
     <div class="alert alert-success fw-bold" style="background-color: rgb(184, 245, 156)"><%= successMsg %></div>
     <% } %> <% if (msglogin.length !== 0) { %>
     <div class="alert alert-success fw-bold" style="background-color: rgb(211, 114, 114)"><%= msglogin %></div>
+    <% } %> <% if (msgUbahUser.length !== 0) { %>
+    <div class="alert alert-success fw-bold" style="background-color: rgb(184, 245, 156)"><%= msgUbahUser %></div>
     <% } %>
     <form method="post" action="/login">
       <h1>Login</h1>
       <input type="text" placeholder="Username" name="username" required />
       <input type="password" placeholder="Password" name="password" required />
       <button type="submit">Login</button>
+      <p><a href="/forgot" id="forgot-link">Lupa Password?</a></p>
     </form>
   </div>
 </div>

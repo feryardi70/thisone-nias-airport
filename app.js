@@ -80,7 +80,63 @@ app.post("/r3g15ter", async (req, res) => {
 });
 
 app.get("/r3g15ter", (req, res) => {
-  res.render("register", { layout: "Layouts/none2", msgPass: req.flash("msgPass") });
+  res.render("register", { layout: "Layouts/none2", msgPass: req.flash("msgPass"), title: "Form Register" });
+});
+
+app.get("/forgot", (req, res) => {
+  res.render("forgot", { layout: "Layouts/none2", title: "Reset Password", msgForgot: req.flash("msgForgot"), msgNewPass: req.flash("msgNewPass"), username: req.flash("username") });
+});
+
+app.post("/forgot", async (req, res) => {
+  const user = await User.findOne({ username: req.body.username });
+  if (!user) {
+    try {
+      req.flash("msgForgot", "username does not exist");
+      res.redirect("/forgot");
+    } catch (error) {
+      res.status(500).json({ error: "Something went wrong, please try again later" });
+    }
+  } else {
+    try {
+      req.flash("msgNewPass", "please input new password below");
+      const username = req.body.username;
+      req.flash("username", username);
+      res.redirect("/reset");
+      //res.render("reset", { layout: "Layouts/none2", title: "Reset Password", msgNewPass: req.flash("msgNewPass"), user });
+    } catch (error) {
+      res.status(500).json({ error: "Something went wrong, please try again later" });
+    }
+  }
+  //res.render("forgot", { layout: "Layouts/none2", title: "Reset Password", msgPass: req.flash("msgPass") });
+});
+
+app.get("/reset", (req, res) => {
+  res.render("reset", { layout: "Layouts/none2", title: "Reset Password", msgNewPass: req.flash("msgNewPass"), username: req.flash("username") });
+});
+
+app.put("/reset", async (req, res) => {
+  //console.log(req.body);
+  const { username, password, confirmPassword } = req.body;
+  const hashedPassword = await bcrypt.hash(password, 10);
+  const hashedConfirmPassword = await bcrypt.hash(confirmPassword, 10);
+  try {
+    User.updateOne(
+      { username: username },
+      {
+        $set: {
+          username: username,
+          password: hashedPassword,
+          confirmPassword: hashedConfirmPassword,
+        },
+      }
+    ).then((result) => {
+      console.log(result);
+    });
+    req.flash("msgUbahUser", "successfully change password");
+    res.redirect("/login");
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 app.post("/login", async (req, res) => {
@@ -154,7 +210,7 @@ app.post("/login", async (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-  res.render("login", { layout: "Layouts/login", successMsg: req.flash("successMsg"), msglogin: req.flash("msglogin") });
+  res.render("login", { layout: "Layouts/login", successMsg: req.flash("successMsg"), msglogin: req.flash("msglogin"), msgUbahUser: req.flash("msgUbahUser") });
 });
 
 app.get("/error", (req, res) => {
