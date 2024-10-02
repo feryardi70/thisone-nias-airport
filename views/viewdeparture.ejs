@@ -15,7 +15,7 @@
         <td>
           <div class="tampillogo"></div>
           <div>
-            <span class="maskapai" style="text-transform: uppercase"><%= depart.airline %></span>
+            <span class="maskapai"><%= depart.airline.toUpperCase() %></span>
             <span><%= depart.flightnumber %></span>
           </div>
         </td>
@@ -38,7 +38,8 @@
 </div>
 
 <!-- script -->
-<script src="js/loadlogo.js"></script>
+<!-- <script src="js/text.transforms"></script> -->
+
 <script>
   const datetime = new Date();
   const h = datetime.getHours();
@@ -62,3 +63,4 @@
     document.querySelector(".pukul").innerHTML = skrg;
   }
 </script>
+<script src="js/loadlogo.js"></script>
