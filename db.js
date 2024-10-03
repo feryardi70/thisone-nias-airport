@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
+
 //mongoose.connect("mongodb://127.0.0.1:27017/dbdellmongo");
-mongoose.connect("mongodb+srv://feryardiansyah94747:i4kCuJMR1I0G4F8H@cluster0.2dkoa.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0");
+mongoose.connect(process.env.MONGO_URI);
 
 // const departureSchema = mongoose.Schema({
 //   airline: { type: String, default: "unknown" },
