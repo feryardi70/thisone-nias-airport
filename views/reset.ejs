@@ -5,7 +5,7 @@
     <% } %>
     <form method="post" action="/reset?_method=PUT">
       <h1>You are resetting your password</h1>
-      <input type="text" placeholder="Please input your username" name="username" value="<%= username %>" required />
+      <input type="hidden" placeholder="Please input your username" name="username" value="<%= username %>" />
       <input class="" type="password" placeholder="Password" name="password" />
       <input class="" type="password" placeholder="Confirm Password" name="confirmPassword" />
       <button type="submit">Confirm</button>

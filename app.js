@@ -119,6 +119,7 @@ app.put("/reset", async (req, res) => {
   const { username, password, confirmPassword } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
   const hashedConfirmPassword = await bcrypt.hash(confirmPassword, 10);
+  console.log(username);
   try {
     User.updateOne(
       { username: username },
