@@ -12,11 +12,13 @@
     <tbody class="">
       <% departures.forEach((depart) => { %>
       <tr>
-        <td>
-          <div class="tampillogo"></div>
-          <div>
-            <span class="maskapai"><%= depart.airline.toUpperCase() %></span>
-            <span><%= depart.flightnumber %></span>
+        <td style="width: 25%">
+          <div class="flight-container">
+            <div class="tampillogo"></div>
+            <div>
+              <span style="margin-left: 10px" class="maskapai"><%= depart.airline.toUpperCase() %></span>
+              <span style="margin-left: 1px"><%= depart.flightnumber %></span>
+            </div>
           </div>
         </td>
         <td style="text-transform: uppercase"><%= depart.destination %></td>

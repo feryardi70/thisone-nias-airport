@@ -6,8 +6,8 @@ router.get("/", (req, res) => {
     statusText: "success",
     msg: "success",
     data: {
-      username: "superadmin1",
-      password: "nias2024!",
+      username: "",
+      password: "",
     },
   });
 });
