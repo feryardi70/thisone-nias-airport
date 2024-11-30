@@ -7,6 +7,7 @@ const jwt = require("jsonwebtoken");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const flash = require("connect-flash");
+const cors = require("cors");
 
 require("./db");
 // const Book = require("./model/contact.js");
@@ -37,6 +38,7 @@ app.use(
 );
 app.use(flash());
 app.use(methodOverride("_method"));
+//app.use(cors());
 
 //setup ejs
 app.set("view engine", "ejs");
@@ -281,7 +283,7 @@ app.get("/viewarrival", async (req, res) => {
   res.render("viewarrival", { layout: "Layouts/arrival-layout", arrivals });
 });
 
-app.use("/apideparture", departureO4yc7xKZRouter);
+app.use("/apideparture", cors(), departureO4yc7xKZRouter);
 app.use("/wisata", wisataRouter);
 
 app.post("/logout", async (req, res) => {
