@@ -27,6 +27,17 @@ const arrivalRouter = require("./arrival/arrival.js");
 const wisataRouter = require("./wisata/wisata.js");
 const departureO4yc7xKZRouter = require("./api/departureO4yc7xKZ/departureO4yc7xKZ.js");
 
+const allowlist = ["http://localhost:5173", "http://127.0.0.1:5173"];
+const corsOptionsDelegate = function (req, callback) {
+  var corsOptions;
+  if (allowlist.indexOf(req.header("Origin")) !== -1) {
+    corsOptions = { origin: true }; // reflect (enable) the requested origin in the CORS response
+  } else {
+    corsOptions = { origin: false }; // disable CORS for this request
+  }
+  callback(null, corsOptions); // callback expects two parameters: error and options
+};
+
 app.use(cookieParser("secret"));
 app.use(
   session({
@@ -283,7 +294,7 @@ app.get("/viewarrival", async (req, res) => {
   res.render("viewarrival", { layout: "Layouts/arrival-layout", arrivals });
 });
 
-app.use("/apideparture", cors(), departureO4yc7xKZRouter);
+app.use("/apideparture", cors(corsOptionsDelegate), departureO4yc7xKZRouter);
 app.use("/wisata", wisataRouter);
 
 app.post("/logout", async (req, res) => {
